@@ -1,8 +1,4 @@
 # ninja log v5
-1	1556	7043872745805335	CMakeFiles/PiggyDB.dir/main.cpp.obj	7d2603cba75ba5ac
-7	1718	7043872747440115	CMakeFiles/PiggyDB.dir/src/DiskManager.cpp.obj	673d5fb38b71f9a2
-1719	1912	7043872749350433	PiggyDB.exe	4696ab296762cf67
-6	1240	7043873134500476	CMakeFiles/PiggyDB.dir/main.cpp.obj	7d2603cba75ba5ac
-1240	1401	7043873136101319	PiggyDB.exe	4696ab296762cf67
 5	1530	7043873231850818	CMakeFiles/PiggyDB.dir/main.cpp.obj	7d2603cba75ba5ac
+7	1718	7043872747440115	CMakeFiles/PiggyDB.dir/src/DiskManager.cpp.obj	673d5fb38b71f9a2
 1530	1714	7043873233667158	PiggyDB.exe	4696ab296762cf67

@@ -55,11 +55,23 @@ build CMakeFiles/PiggyDB.dir/main.cpp.obj: CXX_COMPILER__PiggyDB_Debug E$:/Piggy
   OBJECT_DIR = CMakeFiles\PiggyDB.dir
   OBJECT_FILE_DIR = CMakeFiles\PiggyDB.dir
 
-build CMakeFiles/PiggyDB.dir/src/DiskManager.cpp.obj: CXX_COMPILER__PiggyDB_Debug E$:/PiggyDB/src/DiskManager.cpp || cmake_object_order_depends_target_PiggyDB
-  DEP_FILE = CMakeFiles\PiggyDB.dir\src\DiskManager.cpp.obj.d
+build CMakeFiles/PiggyDB.dir/src/storage/DiskManager.cpp.obj: CXX_COMPILER__PiggyDB_Debug E$:/PiggyDB/src/storage/DiskManager.cpp || cmake_object_order_depends_target_PiggyDB
+  DEP_FILE = CMakeFiles\PiggyDB.dir\src\storage\DiskManager.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
   OBJECT_DIR = CMakeFiles\PiggyDB.dir
-  OBJECT_FILE_DIR = CMakeFiles\PiggyDB.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\PiggyDB.dir\src\storage
+
+build CMakeFiles/PiggyDB.dir/src/buffer/BufferPool.cpp.obj: CXX_COMPILER__PiggyDB_Debug E$:/PiggyDB/src/buffer/BufferPool.cpp || cmake_object_order_depends_target_PiggyDB
+  DEP_FILE = CMakeFiles\PiggyDB.dir\src\buffer\BufferPool.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  OBJECT_DIR = CMakeFiles\PiggyDB.dir
+  OBJECT_FILE_DIR = CMakeFiles\PiggyDB.dir\src\buffer
+
+build CMakeFiles/PiggyDB.dir/src/include/LRUReplacer.cpp.obj: CXX_COMPILER__PiggyDB_Debug E$:/PiggyDB/src/include/LRUReplacer.cpp || cmake_object_order_depends_target_PiggyDB
+  DEP_FILE = CMakeFiles\PiggyDB.dir\src\include\LRUReplacer.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  OBJECT_DIR = CMakeFiles\PiggyDB.dir
+  OBJECT_FILE_DIR = CMakeFiles\PiggyDB.dir\src\include
 
 
 # =============================================================================
@@ -69,7 +81,7 @@ build CMakeFiles/PiggyDB.dir/src/DiskManager.cpp.obj: CXX_COMPILER__PiggyDB_Debu
 #############################################
 # Link the executable PiggyDB.exe
 
-build PiggyDB.exe: CXX_EXECUTABLE_LINKER__PiggyDB_Debug CMakeFiles/PiggyDB.dir/main.cpp.obj CMakeFiles/PiggyDB.dir/src/DiskManager.cpp.obj
+build PiggyDB.exe: CXX_EXECUTABLE_LINKER__PiggyDB_Debug CMakeFiles/PiggyDB.dir/main.cpp.obj CMakeFiles/PiggyDB.dir/src/storage/DiskManager.cpp.obj CMakeFiles/PiggyDB.dir/src/buffer/BufferPool.cpp.obj CMakeFiles/PiggyDB.dir/src/include/LRUReplacer.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PiggyDB.dir

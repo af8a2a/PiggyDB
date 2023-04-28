@@ -7,9 +7,9 @@
 #include <mutex>
 #include <string>
 #include <thread>
-#include "include/def.h"
-#include "include/DiskManager.h"
-#include "include/exception.h"
+#include "../include/def.h"
+#include "../include/DiskManager.h"
+#include "../include/exception.h"
 
 static char* buffer_used;
 

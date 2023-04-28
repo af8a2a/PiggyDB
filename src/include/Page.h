@@ -25,6 +25,19 @@ public:
         page_id_ = page_id;
     }
 
+    int getPinCount() const {
+        return pin_count_;
+    }
+
+    void setPinCount(int pinCount) {
+        pin_count_ = pinCount;
+    }
+    void Pin(){
+        pin_count_++;
+    }
+    void UnPin(){
+        pin_count_--;
+    }
     int GetPageid() {
         return page_id_;
     }
