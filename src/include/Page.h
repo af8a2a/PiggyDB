@@ -1,0 +1,41 @@
+//
+// Created by ame on 2023/4/28.
+//
+
+#ifndef PIGGYDB_PAGE_H
+#define PIGGYDB_PAGE_H
+
+#include <mutex>
+#include <cstring>
+
+class Page {
+private:
+
+    std::mutex mtx_;
+    int page_id_ = -1;
+    int pin_count_ = 0;
+    bool dirty = false;
+    char data[4096]{};
+public:
+    Page() {
+        memset(data, 0, sizeof(data));
+    }
+
+    void SetPageid(int page_id) {
+        page_id_ = page_id;
+    }
+
+    int GetPageid() {
+        return page_id_;
+    }
+
+    bool IsDirty() {
+        return dirty;
+    }
+
+    char *Data() {
+        return data;
+    }
+
+};
+#endif //PIGGYDB_PAGE_H
