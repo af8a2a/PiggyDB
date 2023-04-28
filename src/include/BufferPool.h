@@ -13,6 +13,7 @@ class BufferPool {
 public:
     Page* FetchPage(int page_id);
     Page* UnpinPage(int page_id);
+    Page* NewPage(int page_id);
 private:
     int g_page_id_;
     DiskManager* diskManager_;

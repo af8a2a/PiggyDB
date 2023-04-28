@@ -11,9 +11,10 @@
 class Replacer {
 public:
     virtual bool Evict(int* page_id);
-    virtual void RecordAccess(int* page_id);
-    virtual void SetEvictable(int frame_id, bool set_evictable);
+    virtual void RecordAccess(int page_id);
     virtual void Remove(int frame_id);
+    virtual void SetEvictable(int frame_id, bool evictable);
+
 };
 
 
