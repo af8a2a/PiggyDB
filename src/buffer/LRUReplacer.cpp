@@ -2,7 +2,7 @@
 // Created by ame on 2023/4/28.
 //
 
-#include "LRUReplacer.h"
+#include "../include/LRUReplacer.h"
 
 LRUKReplacer::LRUKReplacer(size_t num_frames, size_t k) : replacer_size_(num_frames), k_(k) {}
 

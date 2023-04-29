@@ -8,18 +8,29 @@
 #include <unordered_map>
 #include "Page.h"
 #include "DiskManager.h"
+#include "LRUReplacer.h"
+
 class BufferPool {
 
 public:
-    Page* FetchPage(int page_id);
-    Page* UnpinPage(int page_id);
-    Page* NewPage(int page_id);
+    BufferPool(DiskManager *diskManager, size_t poolSize);
+
+    virtual ~BufferPool();
+
+    Page* FetchPage(page_id_t page_id);
+    bool UnpinPage(page_id_t page_id,bool is_dirty);
+    Page* NewPage(page_id_t* page_id);
+    bool Flush(page_id_t page_id);
+    bool DeletePage(page_id_t page_id);
 private:
-    int g_page_id_;
+    std::atomic<int> g_page_id_=0;
     DiskManager* diskManager_;
     size_t pool_size_;
     std::mutex latch_;
-    std::unordered_map<int,Page*> hash;
+    std::unordered_map<page_id_t,frame_id_t > page_table;
+    std::list<frame_id_t> free_list_;
+    Page* window_;
+    LRUKReplacer* replacer_;
 };
 
 

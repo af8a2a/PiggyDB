@@ -24,12 +24,12 @@ DiskManager::DiskManager(const std::string& db_file) : file_name_(db_file) {
     }
     log_name_ = file_name_.substr(0, n) + ".log";
 
-    log_io_.open(log_name_, std::ios::binary | std::ios::in | std::ios::app | std::ios::out);
+    log_io_.open(log_name_,  std::ios::in | std::ios::app | std::ios::out);
     // directory or file does not exist
     if (!log_io_.is_open()) {
         log_io_.clear();
         // create a new file
-        log_io_.open(log_name_, std::ios::binary | std::ios::trunc | std::ios::out | std::ios::in);
+        log_io_.open(log_name_,  std::ios::trunc | std::ios::out | std::ios::in);
         if (!log_io_.is_open()) {
             throw std::runtime_error("can't open dblog file");
         }
@@ -41,6 +41,7 @@ DiskManager::DiskManager(const std::string& db_file) : file_name_(db_file) {
     if (!db_io_.is_open()) {
         db_io_.clear();
         // create a new file
+        printf("LOG");
         db_io_.open(db_file, std::ios::binary | std::ios::trunc | std::ios::out | std::ios::in);
         if (!db_io_.is_open()) {
             throw std::runtime_error("can't open db file");
@@ -68,6 +69,8 @@ void DiskManager::WritePage(page_id_t page_id, const char* page_data) {
     size_t offset = static_cast<size_t>(page_id) * PAGE_SIZE;
     // set write cursor to offset
     num_writes_ += 1;
+    log_io_.seekp(offset);
+    log_io_.write(page_data, PAGE_SIZE);
     db_io_.seekp(offset);
     db_io_.write(page_data, PAGE_SIZE);
     // check for I/O error

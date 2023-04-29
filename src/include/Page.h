@@ -32,6 +32,15 @@ public:
     void setPinCount(int pinCount) {
         pin_count_ = pinCount;
     }
+
+    bool isDirty() const {
+        return dirty;
+    }
+
+    void setDirty(bool dirty) {
+        Page::dirty = dirty;
+    }
+
     void Pin(){
         pin_count_++;
     }
@@ -49,6 +58,8 @@ public:
     char *Data() {
         return data;
     }
-
+    void Clear(){
+        memset(data, 0, sizeof(data));
+    }
 };
 #endif //PIGGYDB_PAGE_H

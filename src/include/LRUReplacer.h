@@ -95,7 +95,7 @@ public:
      * @param frame_id id of frame to be removed
      */
     void Remove(frame_id_t frame_id);
-
+    /*
      * @brief Return replacer's size, which tracks the number of evictable frames.
      *
      * @return size_t
