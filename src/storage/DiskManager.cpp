@@ -8,7 +8,7 @@
 #include <string>
 #include <thread>
 #include "../include/def.h"
-#include "../include/DiskManager.h"
+#include "../include/storage/DiskManager.h"
 #include "../include/exception.h"
 
 static char* buffer_used;

@@ -6,7 +6,7 @@
 #define PIGGYDB_REPLACER_H
 
 
-#include "Page.h"
+#include "storage/Page/Page.h"
 
 class Replacer {
 public:

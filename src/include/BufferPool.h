@@ -6,8 +6,8 @@
 #define PIGGYDB_BUFFERPOOL_H
 
 #include <unordered_map>
-#include "Page.h"
-#include "DiskManager.h"
+#include "storage/Page/Page.h"
+#include "storage/DiskManager.h"
 #include "LRUReplacer.h"
 
 class BufferPool {
